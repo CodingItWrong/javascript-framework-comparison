@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Vue.js Component Example</title>
+  </head>
+  <body>
+    See https://vuejs.org/v2/guide/
+
+    <div id="app">
+      <reverser message="Hello, Vue.js!"/>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      Vue.component('reverser', {
+        props: ['message'],
+        data() {
+          return {
+            mutableMessage: this.message
+          }
+        },
+        methods: {
+          reverseMessage() {
+            this.mutableMessage = this.mutableMessage.split('').reverse().join('')
+          }
+        },
+        template: `
+          <div>
+            <input v-model="mutableMessage">
+            <button v-on:click="reverseMessage">Reverse Message</button>
+          </div>
+        `
+      });
+      var app = new Vue({el: '#app'});
+    </script>
+  </body>
+</html>
