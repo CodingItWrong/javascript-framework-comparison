@@ -223,13 +223,13 @@ The component: `react-functional-component/src/Reverser.js`
 
 Usage:
 
-```
+```jsx
 <Reverser message="Hello, React!" />
 ```
 
 Definition:
 
-```
+```jsx
 import React from 'react';
 import { compose, withState, withHandlers } from 'recompose';
 
@@ -269,7 +269,7 @@ The component: `vue-single-file-component/src/Reverser.vue`
 
 Usage:
 
-```
+```html
 <reverser message="Hello, Vue.js!" />
 ```
 
