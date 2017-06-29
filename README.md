@@ -9,7 +9,9 @@ It's unfair because the component is trivial: all it does is allow text to be en
 - How its template is set up, including how the dynamic data is outputted and how a button is bound to an action
 - How the action updates the data in the component
 
-# Angular
+# Primary
+
+## Angular
 
 Cloned from `quickstart`
 
@@ -57,7 +59,7 @@ Observations:
 - Wiring up imports is verbose as well
 - Actual mutation is a simple method declaration and implementation
 
-# Ember
+## Ember
 
 Created by `ember-cli`
 
@@ -107,7 +109,7 @@ export default Ember.Component.extend({
 </div>
 ```
 
-# React
+## React
 
 Created by `create-react-app`
 
@@ -162,7 +164,7 @@ Observations:
 - Reading data from an input was nontrivial
 - Updating state via `setState()`
 
-# Vue
+## Vue
 
 To run: just open `vuejs.html` in a browser.
 
@@ -204,3 +206,53 @@ Observations:
 - Directives are a little verbose
 - Can't use the same name for a prop and data item
 - Simple mutation implementation
+
+# Secondary
+
+## React Functional-Style
+
+## Vue Single-File Components
+
+To run:
+
+```
+cd vue-single-file-component
+npm install
+npm run dev
+```
+
+The component: `vue-single-file-component/src/Reverser.vue`
+
+Usage:
+
+```
+<reverser message="Hello, Vue.js!" />
+```
+
+Definition:
+
+```html
+<template>
+  <div>
+    <input v-model="mutableMessage">
+    <button v-on:click="reverseMessage">Reverse Message</button>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'reverser',
+    props: ['message'],
+    data() {
+      return {
+        mutableMessage: this.message
+      }
+    },
+    methods: {
+      reverseMessage() {
+        this.mutableMessage = this.mutableMessage.split('').reverse().join('')
+      }
+    }
+  }
+</script>
+```
