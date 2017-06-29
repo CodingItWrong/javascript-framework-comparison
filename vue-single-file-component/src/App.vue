@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <reverser message="Hello, Vue!" />
     <img src="./assets/logo.png">
     <h1></h1>
     <h2>Essential Links</h2>
@@ -20,8 +21,13 @@
 </template>
 
 <script>
+import Reverser from './Reverser.vue';
+
 export default {
   name: 'app',
+  components: {
+    Reverser,
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
